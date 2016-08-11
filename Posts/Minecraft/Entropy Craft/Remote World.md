@@ -7,12 +7,14 @@ Sometimes a simple bug is actually very difficult to find because the cause of t
 I figured that if the world in remote that the code in executing on the remote side, however the reverse in true. so `World.isRemote` means the world in **not** on the same side.
 
 This caused a lot of confusion while working on Entropy Craft I had a block of code like the following
+
 ```Java
 if ( !World.isRemote ) { // Here is the bug
   EntropyCraftMod.logger.debug("Skipping random tick on Client");
   return;
 }
 ```
+
 This should, in theory allow the code after it to only run on the server, at least that was my expectation.
 
 Entropy Craft makes torches slowly burn out, so the light level gradually lowers. The code above is supposed to filter out the decay events so that the torch decays on the server, then sends a packet to the client so that it can update the light level.
