@@ -1,5 +1,3 @@
-[FOK-SETUP]: # ()
-
 # World.isRemote
 
 Sometimes a simple bug is actually very difficult to find because the cause of the bug actually makes so many thigs work unexpectedly. That is exactly what happened to me when I misinterpreted what `World.isRemote` does in minecraft Forge.
